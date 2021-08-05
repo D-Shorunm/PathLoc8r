@@ -1,0 +1,70 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+  .row.banner
+    .col-12
+     h1= pageHeader.title
+        small &nbsp; #{pageHeader.strapline}
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href="/location")= location.name
+              small &nbsp;
+                +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+            p.facilities
+               each facility in location.facilities
+                 span.badge.badge-warning= facility
+
+        .card
+          .card-block
+            h4
+              a(href="/location")= location.name
+              small &nbsp;
+                +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address 125 Low Close, Studying, RG9 1PC
+            p.facilities
+               each facility in location.facilities
+                 span.badge.badge-warning= facility
+
+      .card
+        .card-block
+          h4
+            a(href="/location") Chicken Kings
+            small &nbsp;
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.far.fa-star
+              i.far.fa-star
+            span.badge.badge-pill.badge-default.float-right 1500m
+          p.address 145 High Street, Reading, RG6 1TS
+          p.facilities
+            span.badge.badge-warning Hot drinks
+            span.badge.badge-warning Food
+            span.badge.badge-warning Premium wifi
+
+      .card
+        .card-block
+          h4
+            a(href="/location") Domino's Pizza
+            small &nbsp;
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.far.fa-star
+              i.far.fa-star
+            span.badge.badge-pill.badge-default.float-right 750m
+          p.address 125 High Street, Reading, RG6 1PS
+          p.facilities
+            span.badge.badge-warning Hot drinks
+            span.badge.badge-warning Food
+            span.badge.badge-warning Premium wifi
+
+    .col-12.col-md-4
+      p.lead= sidebar
