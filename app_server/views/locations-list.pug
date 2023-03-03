@@ -1,5 +1,11 @@
 extends layout
 include _includes/sharedHTMLfunctions
+
+block scripts
+  script(src='/build/runtime.ec2944dd8b20ec099bf3.js')
+  script(src='/build/polyfills.d1c7bf4a2ae7c3435f95.js')
+  script(src='/build/main.27decb6959ba5faa583d.js')
+
 block content
   .row.banner
     .col-12
@@ -7,36 +13,20 @@ block content
         small &nbsp; #{pageHeader.strapline}
   .row
     .col-12.col-md-8
-      .error= message
-      each location in locations
-        .card
-          .card-block
-            h4
-              a(href=`/location/${location._id}`)= location.name
-              small &nbsp;
-                +outputRating(location.rating)
-              span.badge.badge-pill.badge-default.float-right= location.distance
-            p.address= location.address
-            p.facilities
-               each facility in location.facilities
-                 span.badge.badge-warning= facility
-
-      .card
-        .card-block
-          h4
-            a(href="/location") Domino's Pizza
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 750m
-          p.address 125 High Street, Reading, RG6 1PS
-          p.facilities
-            span.badge.badge-warning Hot drinks
-            span.badge.badge-warning Food
-            span.badge.badge-warning Premium wifi
-
+      .error= message 
+                       //  each location in locations
+                       //    .card
+                       //      .card-block
+                       //        h4
+                       //          a(href=`/location/${location._id}`)= location.name
+                       //          small &nbsp;
+                       //            +outputRating(location.rating)
+                       //          span.badge.badge-pill.badge-default.float-right= location.distance
+                       //        p.address= location.address
+                       //        p.facilities
+                       //           each facility in location.facilities
+                       //             span.badge.badge-warning= facility
+                  
+      app-home-list
     .col-12.col-md-4
       p.lead= sidebar

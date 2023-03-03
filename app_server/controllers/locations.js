@@ -76,7 +76,8 @@ const homelist = (req, res) => {
             lat: 51.451041,
             lng: -4.7992599,
             lat: 81.378091,
-            maxDistance: 30
+            maxDistance: 30000,
+
         }
     };
     request(

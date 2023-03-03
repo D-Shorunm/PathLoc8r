@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 // const dbURI = 'mongodb://localhost/Loc8r';
 // mongoose.connect(dbURI, { useNewUrlParser: true });
 
@@ -13,7 +12,7 @@ mongoose.connect(dbURI, {
 
 
 
-const { MongoClient } = require('mongodb');
+// const { MongoClient } = require('mongodb');
 
 
 
@@ -29,3 +28,5 @@ mongoose.connection.on('disconnected', () => {
 
 
 require('./locations');
+
+require('./users');
