@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // mongoose.connect(dbURI, { useNewUrlParser: true });
 
 
-const dbURI = 'mongodb+srv://D-SHO_Consultant:siZsxfOvSm5rUaad@cluster0.177zb.mongodb.net/myFDbase?retryWrites=true&w=majority';
+const dbURI = '';
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
